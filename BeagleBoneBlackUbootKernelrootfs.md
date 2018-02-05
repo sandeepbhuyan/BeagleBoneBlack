@@ -292,6 +292,7 @@ sandeeptux@sandeeplinux:~$ dmesg | tail -4
 
 ```
 ```
+Create Partition layout:
 sandeeptux@sandeeplinux:~$ sudo fdisk /dev/sdb
 
 Command (m for help): p
@@ -318,4 +319,16 @@ name change to `ROOTFS`- `sudo mkfs.ext4 -L "ROOTFS" /dev/sdb2`
 
 ### Now Final  Bringing it all together:
 
-Creat a directory 
+Creat a empty directory `(ex:rootfshost)` for Copy Ubuntu-16.04 Rootfs from Host machine to SD card(SD Card USB ADAPTER) by help up virtual mount Setup SD card
+in my case i have created `rootfshost` Directory in home Directory
+
+```
+filesystem mount     External mount
+/dev/sdb1<--------->/media/sandeeptux/BOOT
+/dev/sdb2<--------->/media/sandeeptux/ROOTFS
+```
+
+
+sandeeptux@sandeeplinux:~$ sudo mount /dev/sdb1/ rootfshost 
+sandeeptux@sandeeplinux:~$ 
+
