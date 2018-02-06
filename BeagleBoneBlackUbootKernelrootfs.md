@@ -357,6 +357,14 @@ sandeeptux@sandeeplinux:~$ sudo chown root:root rootfshost
 
 sandeeptux@sandeeplinux:~$ sudo chmod 755 rootfshost
 
+sandeeptux@sandeeplinux:~$ sudo chown root:root rootfshost/usr/bin/sudo  
+
+sandeeptux@sandeeplinux:~$ sudo chmod 4755 rootfshost/usr/bin/sudo
+
+sandeeptux@sandeeplinux:~$ sudo umount boothost
+
+sandeeptux@sandeeplinux:~$ sudo umount rootfshost
+
 ```
  ## Note: If you have issues with sudo on user UID in BeagleboneBlack kernel ,
  
@@ -366,3 +374,17 @@ solution:
 sandeeptux@sandeeplinux:~$ sudo chown root:root rootfshost//usr/bin/sudo  
 sandeeptux@sandeeplinux:~$ sudo chmod 4755 rootfshost/usr/bin/sudo
 ```
+
+## Edit networks interfaces and append in the existing file:
+```
+$ sudo nano etc/network/interfaces  
+auto lo  
+iface lo inet loopback  
+auto eth0  
+iface eth0 inet dhcp
+```
+
+Remove SD:
+
+sandeeptux@sandeeplinux:~$ sudo umount /media/sandeeptux/BOOT
+sandeeptux@sandeeplinux:~$ sudo umount /media/sandeeptux/ROOTFS
