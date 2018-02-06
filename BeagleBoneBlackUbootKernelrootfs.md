@@ -891,5 +891,10 @@ individual files in /usr/share/doc/*/copyright.
 Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
 applicable law.
 
-ubuntu@arm:~$ 
+ubuntu@arm:~$ sudo mkdir -p /var/lib/dpkg/updates
+ubuntu@arm:~$ sudo mkdir /etc/apt/preferences.d
+ubuntu@arm:~$ sudo apt-get update
+ubuntu@arm:~$ sudo apt-get upgrade
 ```
+### Above this 4 command will update your linux kernel package and update some tool,
+### This is minimal Rootfs, so that some directory may not be created before so we need to creat some important directory,so i am using `sudo mkdir -p /var/lib/dpkg/updates`    `sudo mkdir /etc/apt/preferences.d`
