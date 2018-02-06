@@ -1,3 +1,7 @@
+### Linux Kernel Driver Programming with Embedded Devices
 
-### Kernel Development for any Development Board 
+Note : Here i have taken the SOC called  `Beagle Bone Black(TI AM335X)` for Development (you can take any SOC)
 
+1. Writing a Linux Kernel Module
+
+- [x] 
