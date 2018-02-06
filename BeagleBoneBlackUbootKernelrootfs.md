@@ -127,7 +127,7 @@ sandeeptux@sandeeplinux:~$ sudo apt install libncurses5-dev libncursesw5-dev
 ## Bootloader: U-Boot
 
 The first step is to build the bootloader, U-Boot. Two important files will come out of this process: `MLO` and `u-boot.img`. MLO is what the U-Boot community calls the SPL (Secondary Program Loader) and contains executable code for the second boot stage. 
-1. The on-board ROM initializes a 1 CPU cores will initialize the CPU and searches for a file called MLO on the first FAT partition of the first SD card, then loads it in memory and executes it
+1. The on-board ROM initializes a 1 CPU cores will initialize and searches for a file called MLO on the first FAT partition of the first SD card, then loads it in memory and executes it
 2. The SPL (MLO) initializes a few other things and searches on the same partition for u-boot.img, which is the third boot stage (the actual complete U-Boot program), loads it in memory and executes it
     
 ```
@@ -319,16 +319,43 @@ name change to `ROOTFS`- `sudo mkfs.ext4 -L "ROOTFS" /dev/sdb2`
 
 ### Now Final  Bringing it all together:
 
-Creat a empty directory `(ex:rootfshost)` for Copy Ubuntu-16.04 Rootfs from Host machine to SD card(SD Card USB ADAPTER) by help up virtual mount Setup SD card
-in my case i have created `rootfshost` Directory in home Directory
+Creat 2 empty directory `(ex:boothost)``(ex:rootfshost)` for Copy Ubuntu-16.04 Rootfs from Host machine to SD card(SD Card USB ADAPTER) by help up virtual mount Setup SD card. In my case i have created 2 Directory in home Directory 
+
+`1-boothost  (For /media/sandeeptux/BOOT) `
+
+`2-rootfshost (For media/sandeeptux/ROOTFS)`
+```
+                      filesystem mount               External mount media device       copy contain
+boothost<------------>/dev/sdb1/<--------------------->/media/sandeeptux/BOOT<------>MLO , u-boot.img 
+rootfshost<---------->/dev/sdb2/<--------------------->/media/sandeeptux/ROOTFS<---->rootfs,zImage,uEnv.txt,am335x-boneblack.dtb
+```
+```
+sandeeptux@sandeeplinux:~$ sudo mount /dev/sdb1/ boothost
+sandeeptux@sandeeplinux:~$ sudo mount /dev/sdb2/ rootfshost
 
 ```
-filesystem mount     External mount
-/dev/sdb1<--------->/media/sandeeptux/BOOT
-/dev/sdb2<--------->/media/sandeeptux/ROOTFS
 ```
+For 1st partion U-boot(MLO,u-boot.img):
 
+sandeeptux@sandeeplinux:~/u-boot$ sudo cp MLO u-boot.img /home/sandeeptux/boothost/
 
-sandeeptux@sandeeplinux:~$ sudo mount /dev/sdb1/ rootfshost 
-sandeeptux@sandeeplinux:~$ 
+For 2nd partion Rootfs (zImage,uEnv.txt,dtb):
 
+sandeeptux@sandeeplinux:~$ cd BeagleBoneBlackRootfsUbuntu-16.04/
+
+sandeeptux@sandeeplinux:~/BeagleBoneBlackRootfsUbuntu-16.04$ cp * -R rootfshost
+
+sandeeptux@sandeeplinux:~/BeagleBoneBlackRootfsUbuntu-16.04$ sync
+
+sandeeptux@sandeeplinux:~/linux/arch/arm/boot$ sudo cp zImage /home/sandeeptux/rootfshost/
+
+sandeeptux@sandeeplinux:~/linux/arch/arm/boot/dts$ sudo cp am335x-* /home/sandeeptux/rootfsmedia/
+
+sandeeptux@sandeeplinux:~$ sudo cp uEnv.txt rootfshost
+
+sandeeptux@sandeeplinux:~$ sudo chown root:root rootfshost
+
+sandeeptux@sandeeplinux:~$ sudo chmod 755 rootfshost
+
+```
+ 
