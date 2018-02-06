@@ -319,7 +319,7 @@ name change to `ROOTFS`- `sudo mkfs.ext4 -L "ROOTFS" /dev/sdb2`
 
 ### Now Final  Bringing it all together:
 
-Creat 2 empty directory `(ex:boothost)``(ex:rootfshost)` for Copy Ubuntu-16.04 Rootfs from Host machine to SD card(SD Card USB ADAPTER) by help up virtual mount Setup SD card. In my case i have created 2 Directory in home Directory 
+Creat 2 empty directory `(ex:boothost)`  `(ex:rootfshost)` for Copy Ubuntu-16.04 Rootfs from Host machine to SD card(SD Card USB ADAPTER) by help up virtual mount Setup SD card. In my case i have created 2 Directory in home Directory 
 
 `1-boothost  (For /media/sandeeptux/BOOT) `
 
@@ -347,15 +347,22 @@ sandeeptux@sandeeplinux:~/BeagleBoneBlackRootfsUbuntu-16.04$ cp * -R rootfshost
 
 sandeeptux@sandeeplinux:~/BeagleBoneBlackRootfsUbuntu-16.04$ sync
 
-sandeeptux@sandeeplinux:~/linux/arch/arm/boot$ sudo cp zImage /home/sandeeptux/rootfshost/
+sandeeptux@sandeeplinux:~/linux/arch/arm/boot$ sudo cp zImage /home/sandeeptux/rootfshost/boot
 
-sandeeptux@sandeeplinux:~/linux/arch/arm/boot/dts$ sudo cp am335x-* /home/sandeeptux/rootfsmedia/
+sandeeptux@sandeeplinux:~/linux/arch/arm/boot/dts$ sudo cp am335x-* /home/sandeeptux/rootfshost/boot
 
-sandeeptux@sandeeplinux:~$ sudo cp uEnv.txt rootfshost
+sandeeptux@sandeeplinux:~$ sudo cp uEnv.txt rootfshost/boot
 
 sandeeptux@sandeeplinux:~$ sudo chown root:root rootfshost
 
 sandeeptux@sandeeplinux:~$ sudo chmod 755 rootfshost
 
 ```
+ ## Note: If you have issues with sudo on user UID in BeagleboneBlack kernel ,
  
+error : `sudo: /usr/bin/sudo must be owned by uid 0 and have the setuid bit set`
+```
+solution:
+sandeeptux@sandeeplinux:~$ sudo chown root:root rootfshost//usr/bin/sudo  
+sandeeptux@sandeeplinux:~$ sudo chmod 4755 rootfshost/usr/bin/sudo
+```
