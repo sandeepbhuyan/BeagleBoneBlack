@@ -907,3 +907,5 @@ E: Sub-process /usr/bin/dpkg returned an error code (2)
 so i am using `sudo mkdir -p /var/lib/dpkg/updates`    `sudo mkdir /etc/apt/preferences.d`
 
 ### My next article Writing a Kernel module for Beagle Bone Black [comingsoon](https://github.com/sandeepbhuyan/BeagleBoneBlack/blob/master/KernelDevelopmentBeagleBoneBlack.md) 
+
+### Note : Always use `ubuntu@arm:$ sudo poweroff` for shutdown BeagleBoneBlack
