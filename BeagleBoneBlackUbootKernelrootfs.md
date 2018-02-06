@@ -291,8 +291,8 @@ sandeeptux@sandeeplinux:~$ dmesg | tail -4
 [55345.084561] systemd-hostnamed[22617]: Warning: nss-myhostname is not installed. Changing the local hostname might make it unresolveable. Please install nss-myhostname!
 
 ```
+## Create Partition layout:
 ```
-Create Partition layout:
 sandeeptux@sandeeplinux:~$ sudo fdisk /dev/sdb
 
 Command (m for help): p
@@ -384,7 +384,9 @@ auto eth0
 iface eth0 inet dhcp
 ```
 
-Remove SD:
+Remove SD card:
+
 
 sandeeptux@sandeeplinux:~$ sudo umount /media/sandeeptux/BOOT
+
 sandeeptux@sandeeplinux:~$ sudo umount /media/sandeeptux/ROOTFS
