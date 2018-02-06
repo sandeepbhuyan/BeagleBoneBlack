@@ -897,6 +897,13 @@ ubuntu@arm:~$ sudo apt-get update
 ubuntu@arm:~$ sudo apt-get upgrade
 ```
 Above this 4 command in `ubuntu@arm:~$` will update your linux kernel package and update some pre install tool,
-This is minimal Rootfs, so that some directory may not be created before so we need to creat some important directory,so i am using `sudo mkdir -p /var/lib/dpkg/updates`    `sudo mkdir /etc/apt/preferences.d`
+This is minimal Rootfs, so that some directory may not be created before so we need to creat some important directory,
+you might be get this error
+```
+error 1===dpkg: error: cannot scan updates directory '/var/lib/dpkg/updates/': No such file or directory
+W: Unable to read /etc/apt/preferences.d/ - DirectoryExists (2: No such file or directory)
+E: Sub-process /usr/bin/dpkg returned an error code (2)
+```
+so i am using `sudo mkdir -p /var/lib/dpkg/updates`    `sudo mkdir /etc/apt/preferences.d`
 
 ### My next article Writing a Kernel module for Beagle Bone Black [comingsoon](https://github.com/sandeepbhuyan/BeagleBoneBlack/blob/master/KernelDevelopmentBeagleBoneBlack.md) 
