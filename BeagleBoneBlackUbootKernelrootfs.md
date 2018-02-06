@@ -127,7 +127,7 @@ sandeeptux@sandeeplinux:~$ sudo apt install libncurses5-dev libncursesw5-dev
 ## Bootloader: U-Boot
 
 The first step is to build the bootloader, U-Boot. Two important files will come out of this process: `MLO` and `u-boot.img`. MLO is what the U-Boot community calls the SPL (Secondary Program Loader) and contains executable code for the second boot stage. 
-1. The on-board ROM initializes a 1 CPU cores will initialize and searches for a file called MLO on the first FAT partition of the first SD card, then loads it in memory and executes it
+1. The on-board ROM initializes a 1 CPU cores and searches for a file called MLO on the first FAT partition of the first SD card, then loads it in memory and executes it
 2. The SPL (MLO) initializes a few other things and searches on the same partition for u-boot.img, which is the third boot stage (the actual complete U-Boot program), loads it in memory and executes it
     
 ```
