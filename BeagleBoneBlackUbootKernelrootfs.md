@@ -162,7 +162,7 @@ sandeeptux@sandeeplinux:~/linux$ make modules -j4
 ```
 ## OR
 
-`sandeeptux@sandeeplinux:~/linux$ make uImage LOADADDR=0x80008000 -j4 uImage dtbs`
+`sandeeptux@sandeeplinux:~/linux$ make uImage LOADADDR=0x80008000 -j4 uImage modules dtbs`
 
 ### Note: General error During Compilation 
 
@@ -896,5 +896,7 @@ ubuntu@arm:~$ sudo mkdir /etc/apt/preferences.d
 ubuntu@arm:~$ sudo apt-get update
 ubuntu@arm:~$ sudo apt-get upgrade
 ```
-### Above this 4 command in `ubuntu@arm:~$` will update your linux kernel package and update some pre install tool,
-### This is minimal Rootfs, so that some directory may not be created before so we need to creat some important directory,so i am using `sudo mkdir -p /var/lib/dpkg/updates`    `sudo mkdir /etc/apt/preferences.d`
+Above this 4 command in `ubuntu@arm:~$` will update your linux kernel package and update some pre install tool,
+This is minimal Rootfs, so that some directory may not be created before so we need to creat some important directory,so i am using `sudo mkdir -p /var/lib/dpkg/updates`    `sudo mkdir /etc/apt/preferences.d`
+
+### My next article Writing a Kernel module for Beagle Bone Black (coming soon)
