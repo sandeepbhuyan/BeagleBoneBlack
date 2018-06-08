@@ -25,4 +25,10 @@ sandeeptux@sandeeplinux:~/linux$ make dtbs
 `sudo make ARCH=arm CROSS_COMPILE=/home/sandeeptux/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf- INSTALL_HDR_PATH=/media/sandeeptux/ROOTFS/ headers_install`
 
 
+### Que:You Might be thing why we need to install Header
+
+### https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt
+
+
+### Ans:
 
