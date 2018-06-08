@@ -20,5 +20,9 @@ sandeeptux@sandeeplinux:~/linux$ make dtbs
 
 `sandeeptux@sandeeplinux:~/linux$ sudo make ARCH=arm CROSS_COMPILE=/home/sandeeptux/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf- INSTALL_MOD_PATH=/media/sandeeptux/ROOTFS/ modules_install`
 
+- [x] Install Headers 
+
+`sudo make ARCH=arm CROSS_COMPILE=/home/sandeeptux/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf- INSTALL_HDR_PATH=/media/sandeeptux/ROOTFS/ headers_install`
+
 
 
