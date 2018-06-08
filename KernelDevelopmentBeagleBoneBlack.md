@@ -27,7 +27,7 @@ sandeeptux@sandeeplinux:~/linux$ make dtbs
 
 ### Que:You Might be thing why we need to install Header
 
-### https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt
+## https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt
 
 
 ### Ans:
