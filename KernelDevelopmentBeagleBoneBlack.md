@@ -1,5 +1,7 @@
 ### Linux Kernel Driver Programming with Embedded Devices
 
+#### https://www.kernel.org/doc/Documentation/kbuild/modules.txt
+
 Note : Here i have taken the SOC called  `Beagle Bone Black(TI AM335X)` for Development (you can take any SOC)
 
 1. Writing a Linux Kernel Module
@@ -27,8 +29,6 @@ sandeeptux@sandeeplinux:~/linux$ make dtbs
 
 ### Que:You Might be thing why we need to install Header
 
-#### https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt
+#### Ref: https://www.kernel.org/doc/Documentation/kbuild/headers_install.txt
 
-
-### Ans:
 
