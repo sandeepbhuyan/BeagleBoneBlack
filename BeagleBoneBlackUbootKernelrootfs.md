@@ -18,7 +18,7 @@ This post describes the setup detail for installing Ubuntu based distro in Beagl
 
 ##  1. Download the GCC Linaro ARM Cross Compiler Toolchain:and extract it on Host machine(x86):
 ```
-sandeeptux@sandeeplinux:~$ wget -c https://releases.linaro.org/components/toolchain/binaries/6.4-2017.11/arm-linux-gnueabihf/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz
+sandeeptux@sandeeplinux:~$ wget -c https://releases.linaro.org/components/toolchain/binaries/latest-6/arm-linux-gnueabihf/gcc-linaro-6.4.1-2018.05-x86_64_arm-linux-gnueabihf.tar.xz
 
 sandeeptux@sandeeplinux:~$ tar xf gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz  
 ```
