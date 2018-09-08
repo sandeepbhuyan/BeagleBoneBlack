@@ -142,6 +142,7 @@ sandeeptux@sandeeplinux:~$ git clone https://github.com/u-boot/u-boot
 sandeeptux@sandeeplinux:~$ cd u-boot/
 sandeeptux@sandeeplinux:~$ git checkout v2018.01 
 sandeeptux@sandeeplinux:~$ make am335x_boneblack_defconfig 
+sandeeptux@sandeeplinux:~$ make -j4
 sandeeptux@sandeeplinux:~/u-boot$ ls
 ```
 output file:
