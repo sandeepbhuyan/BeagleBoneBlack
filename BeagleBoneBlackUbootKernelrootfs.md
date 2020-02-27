@@ -18,15 +18,15 @@ This post describes the setup detail for installing Ubuntu based distro in Beagl
 
 ##  1. Download the GCC Linaro ARM Cross Compiler Toolchain:and extract it on Host machine(x86):
 ```
-sandeeptux@sandeeplinux:~$ wget -c https://releases.linaro.org/components/toolchain/binaries/latest-6/arm-linux-gnueabihf/gcc-linaro-6.4.1-2018.05-x86_64_arm-linux-gnueabihf.tar.xz
+sandeeptux@sandeeplinux:~$ wget -c https://releases.linaro.org/components/toolchain/binaries/7.4-2019.02/arm-linux-gnueabihf/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf.tar.xz
 
-sandeeptux@sandeeplinux:~$ tar xf gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf.tar.xz  
+sandeeptux@sandeeplinux:~$ tar xf gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf.tar.xz 
 
 Note:if any error we got like ERROR: no certificate subject alternative name matches
 	requested host name ‘releases.linaro.org’.
 To connect to releases.linaro.org insecurely, use `--no-check-certificate'.
 
-solve : wget -c --no-check-certificate https://releases.linaro.org/components/toolchain/binaries/latest-6/arm-linux-gnueabihf/gcc-linaro-6.4.1-2018.05-x86_64_arm-linux-gnueabihf.tar.xz
+solve : wget -c --no-check-certificate https://releases.linaro.org/components/toolchain/binaries/7.4-2019.02/arm-linux-gnueabihf/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf.tar.xz
 
 ```
 **Create general variable environments:**
