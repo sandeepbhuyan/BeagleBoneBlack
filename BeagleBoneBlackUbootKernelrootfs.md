@@ -33,7 +33,7 @@ solve : wget -c --no-check-certificate https://releases.linaro.org/components/to
 ```
 sandeeptux@sandeeplinux:~$ export ARCH=arm
 
-sandeeptux@sandeeplinux:~$ export CROSS_COMPILE=/home/sandeeptux/gcc-linaro-6.4.1-2017.11-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
+sandeeptux@sandeeplinux:~$ export CROSS_COMPILE=/home/sandeeptux/gcc-linaro-7.4.1-2019.02-x86_64_arm-linux-gnueabihf/bin/arm-linux-gnueabihf-
 ```
 
 ## Required Tools for Host machine (x86 intel Ubuntu-14.04) :
